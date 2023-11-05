@@ -1,0 +1,52 @@
+// ## HEADER STYLES ##
+header {
+  @apply container sticky top-0 left-0 w-full max-w-7xl p-2 md:px-4 rounded-xl flex items-center justify-between z-50 bg-white border md:py-4 md:space-x-4 shadow-sm2;
+
+  #nav__toggle[aria-expanded="false"] {
+    background-image: url("../../images/hamburger.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    z-index: 10;
+  }
+  #nav__toggle[aria-expanded="true"] {
+    background-image: url("../../images/close.svg");
+    z-index: 10;
+  }
+
+  nav {
+    @apply fixed top-0 left-0 bg-transparent w-full h-0 md:h-auto md:static md:w-auto shadow-sm md:shadow-none -z-10;
+
+    ul {
+      @apply bg-white w-full flex flex-col transition-transform duration-300 ease-out md:w-auto md:flex-row;
+
+      li {
+        @apply font-semibold transition-colors duration-200 py-2 px-3 border-b w-full hover:text-white active:text-primary hover:bg-primary md:w-auto md:border-none md:hover:text-primary md:hover:bg-white;
+
+        a {
+          @apply block;
+        }
+      }
+    }
+    ul[data-visible="true"] {
+      @apply translate-y-[3.6rem] md:translate-y-0;
+    }
+    ul[data-visible="false"] {
+      @apply -translate-y-full md:translate-y-0;
+    }
+  }
+
+  #nav__search {
+    @apply hidden md:flex items-center space-x-2 shadow-sm max-w-xl rounded-xl px-3 py-1;
+
+    #search__input {
+      @apply rounded-md focus:right-1 focus:ring-gray-400;
+    }
+
+    #cart__wrapper {
+      @apply relative cursor-pointer;
+      #cart__badge {
+        @apply absolute -top-2 -right-1.5;
+      }
+    }
+  }
+}

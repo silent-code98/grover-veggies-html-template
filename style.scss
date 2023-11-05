@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("./assets/css/_fonts.scss");
+@import url("./assets/css/sections/_header.scss");
+@import url("./assets/css/sections/_hero.scss");
+// @import url("./assets/css/sections/_usp.scss");
+
+@layer components {
+  .btn__primary {
+    @apply text-base md:text-xl px-5 py-3 md:px-8 md:py-4 rounded-xl font-medium text-white bg-primary hover:bg-black border-transparent border transition-colors duration-200;
+  }
+  .btn__secondary {
+    @apply text-base md:text-xl px-5 py-3 md:px-8 md:py-4 rounded-xl font-medium text-primary bg-transparent border border-primary  hover:bg-primary hover:text-white transition-colors duration-200;
+  }
+}

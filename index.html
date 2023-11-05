@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gorver - Grocery Shop</title>
+    <link rel="stylesheet" href="style.scss" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  </head>
+  <body class="relative z-auto">
+    <!-- #Section - Header -->
+    <header data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
+      <a tabindex="1" id="logo" href="/" class="z-10"
+        ><img src="./assets/images/logo.svg" alt="Logo"
+      /></a>
+
+      <button
+        tabindex="2"
+        type="button"
+        title="Navigation Toggle"
+        id="nav__toggle"
+        class="w-8 h-8 flex md:hidden"
+        aria-expanded="false"
+      ></button>
+
+      <nav aria-label="Navigation Container">
+        <ul
+          tabindex="3"
+          id="nav__menu"
+          aria-label="Navigation Menu"
+          data-visible="false"
+        >
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+      </nav>
+
+      <div id="nav__search">
+        <img
+          src="/assets/images/search.svg"
+          alt="Search Icon"
+          aria-hidden="true"
+          id="search__icon"
+          class="w-6 h-6"
+        />
+
+        <input
+          type="text"
+          placeholder="Search"
+          id="search__input"
+          class="border-r border-none border-r-gray-500"
+        />
+
+        <div id="cart__wrapper">
+          <button>
+            <img
+              src="/assets/images/cart.svg"
+              alt="Cart Icon"
+              aria-hidden="true"
+              id="cart__icon"
+              class="w-6 h-6"
+            />
+          </button>
+
+          <p
+            id="cart__badge"
+            class="text-sm bg-red-500 flex items-center justify-center w-5 h-5 text-white font-semibold rounded-full"
+          >
+            2
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- #Section - Hero -->
+    <section aria-label="Hero Section" id="hero">
+      <div id="hero__col--left" class="flex flex-1 overflow-hidden">
+        <div
+          id="pre-tittle__text--wrapper"
+          class="rounded-full w-full md:w-max border border-red-200"
+          data-aos="fade-up"
+        >
+          <span>More than faster</span>
+          <img src="/assets/images/strawberry.png" alt="strawberry" />
+        </div>
+
+        <h1
+          id="title"
+          class="text-4xl leading-tight text-center md:text-left md:text-7xl font-medium md:leading-tight"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Groceries delivered in as little as
+          <span
+            class="font-light text-primary relative before:absolute before:w-full before:h-1 before:bg-red-500 before:bottom-0 md:before:bottom-3 left-0"
+            >2 hours</span
+          >
+        </h1>
+
+        <p
+          class="text-lg text-neutral-500 font-normal text-center md:text-left leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          Grocen atssures fresh grocery every morning to your family without
+          getting out in this pandemic.
+        </p>
+
+        <div
+          id="cta__links--wrapper"
+          class="flex space-x-7 w-full items-center justify-center md:justify-start"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <a href="/" class="btn__primary">Order now</a>
+          <a
+            href="/"
+            class="flex items-center justify-center gap-2 border text-base md:text-xl px-6 py-3 md:px-8 md:py-4 rounded-xl font-medium hover:bg-slate-200 transition-colors duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6 text-orange-400"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
+                clip-rule="evenodd"
+              />
+            </svg>
+
+            Order Process
+          </a>
+        </div>
+      </div>
+
+      <div id="hero__col--right" class="flex flex-1">
+        <!-- ##Cart Item -->
+        <div id="cart__item--wrapper" data-aos="fade-up" data-aos-delay="300">
+          <div id="cart__item--bg-shape"></div>
+          <img
+            src="./assets/images/oranges.png"
+            alt="Oranges"
+            id="cart__item--img"
+            aria-labelledby="cart__item--title"
+          />
+          <h4 id="cart__item--title" class="text-sm font-semibold mt-3">
+            Fresh Orange
+          </h4>
+          <div class="flex flex-col items-center justify-center">
+            <h3 id="cart__item--price" class="font-bold">$44.60</h3>
+            <p class="capitalize text-xs text-neutral-600 font-medium">
+              Free shipping
+            </p>
+          </div>
+
+          <button id="cart__icon--img">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          id="chef__img"
+          class="flex items-center justify-center w-full"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <img
+            class="w-full md:max-w-lg"
+            src="./assets/images/chef.png"
+            alt="Chef"
+          />
+        </div>
+
+        <div
+          id="arrow__indicating--time"
+          class="max-w-[6.25rem] absolute -z-10 top-1/3 -translate-y-1/2 right-5 xl:right-[15%] xl:top-1/3"
+          data-aos="zoom-in"
+        >
+          <svg
+            width="120"
+            height="171"
+            viewBox="0 0 120 171"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M91.5002 26.9999C108.5 43.4998 113.5 72.4998 83.3175 113.936C66.9071 129.491 48.6944 131.698 40.2527 130.38C25.2519 128.039 14.1776 100.862 32.0719 85.0889C48.6242 70.4989 73.0137 80.9897 73.3361 107.222C73.5827 127.285 40.7555 158.236 23.336 169.222"
+              stroke="#E0E0E0"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-dasharray="5 8"
+            />
+            <path
+              d="M66.3403 5.81923C62.6356 5.70825 60.1022 9.5254 61.6432 12.8961L69.8329 30.8075C71.4635 34.3738 76.3776 34.7606 78.5459 31.4934L82.3681 25.7345C82.9782 24.8154 82.7288 23.5759 81.8108 22.9642L75.9881 19.084C75.2987 18.6246 75.1122 17.6934 75.5717 17.0041C76.031 16.3146 76.9622 16.1282 77.6517 16.5876L83.4637 20.4606C84.3841 21.074 85.6276 20.8238 86.2392 19.9023L90.0426 14.1716C92.2109 10.9044 89.946 6.52633 86.0264 6.40882L66.3403 5.81923Z"
+              fill="#E0E0E0"
+            />
+          </svg>
+        </div>
+
+        <!-- ##Delivery Info -->
+        <div
+          id="delivery__info--wrapper"
+          class="animate-bounce flex w-[10rem] items-center gap-x-3 p-4 bg-white shadow-sm2 rounded-lg absolute top-[17%] md:top-[20%] right-0 md:right-7 z-10"
+          data-aos="fade-left"
+          data-aos-delay="800"
+        >
+          <i class="text-green-600"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </i>
+
+          <div class="flex flex-col bg-white items-start justify-center">
+            <p class="font-bold">Delivery</p>
+            <span>30 min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #Section - USPs -->
+    <section
+      class="max-w-full min-h-[50dvh] py-12 md:py-[6.25rem] bg-red-50 relative z-auto overflow-hidden"
+      data-aos="fade-up"
+    >
+      <div
+        id="usp__wrapper"
+        class="container max-w-7xl flex flex-col items-center justify-center gap-y-3 px-3 relative"
+      >
+        <h4 class="text-lg text-primary font-medium text-center">
+          What we Serve
+        </h4>
+        <h2
+          class="font-bold text-2xl md:text-4xl max-w-2xl text-center leading-snug md:leading-relaxed capitalize"
+        >
+          fruit and vegetable delivered to your home
+        </h2>
+
+        <div
+          id="usp__grid"
+          class="max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-y-5 md:gap-x-10 mt-6 md:mt-12 relative z-auto"
+        >
+          <!-- #USP ITEM 1 -->
+          <div
+            class="w-full max-w-[300px] min-h-[310px] flex flex-col bg-white rounded-xl p-3 text-center items-center justify-center shadow-sm2 z-10 relative"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <img src="./assets/images/free-shipping.png" alt="Free Shipping" />
+            <h4 class="text-xl font-semibold mb-3">Free Shipping</h4>
+            <p class="text-sm text-neutral-600">
+              Enjoy Order in a hand using the fresness of groceries
+            </p>
+          </div>
+          <!-- #USP ITEM 2 -->
+          <div
+            class="w-full max-w-[300px] min-h-[310px] flex flex-col bg-white rounded-xl p-3 text-center items-center justify-center shadow-sm2 z-10 relative"
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <img src="./assets/images/return-policy.png" alt="Free Shipping" />
+            <h4 class="text-xl font-semibold mb-3">15 days returns</h4>
+            <p class="text-sm text-neutral-600">
+              Order in a handy way using the freshness of the groceries.
+            </p>
+          </div>
+          <!-- #USP ITEM 3 -->
+          <div
+            class="w-full max-w-[300px] min-h-[310px] flex flex-col bg-white rounded-xl p-3 text-center items-center justify-center shadow-sm2 z-10 relative"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            <img
+              src="./assets/images/secure-checkout.png"
+              alt="Free Shipping"
+            />
+            <h4 class="text-xl font-semibold mb-3">Secure checkout</h4>
+            <p class="text-sm text-neutral-600">
+              If you get rotten items - return immediately to us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #Section - Why Choose Us -->
+    <section aria-label="Why Choose Us?" id="why-choose-us" data-aos="zoom-in">
+      <div
+        class="container w-full max-w-5xl flex flex-col md:flex-row items-center justify-center h-auto px-3 pb-10 md:py-16 md:px-0 relative md:gap-x-[3.125rem] overflow-hidden"
+      >
+        <!-- ##Left Column -->
+        <div
+          class="flex flex-1 flex-col md:flex-row relative items-center justify-center pb-10"
+        >
+          <img
+            src="./assets/images/girl-wtih-oranges.png"
+            alt="A girl with oranges in hand"
+            class="w-full md:max-w-[25.625rem]"
+          />
+
+          <div
+            class="flex flex-col items-center justify-start flex-1 w-[13.125rem] bg-white shadow-sm2 rounded-xl gap-y-2 px-5 py-4 border border-zinc-200 absolute top-[50%] right-6 md:top-1/3 md:-right-6"
+            data-aos="fade-down"
+            data-aos-delay="600"
+          >
+            <h3 class="text-lg font-bold text-black">Melting Cheese</h3>
+            <span class="text-sm text-gray-400">Red Strawberry</span>
+            <img
+              src="./assets/images/product-strawberry.png"
+              alt="Red Strawberries"
+              class="max-w-[7.875rem] my-3"
+            />
+            <span class="w-full flex items-center justify-start gap-x-2"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6 text-yellow-400"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="text-sm font-medium text-neutral-500 mt-1">4.6</span>
+            </span>
+
+            <div class="flex gap-x-2 items-center justify-between w-full">
+              <h5 class="text-xl font-bold">$49.99</h5>
+              <button class="bg-primary text-white rounded-md p-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4.5v15m7.5-7.5h-15"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ##Right Column -->
+        <div
+          class="flex flex-1 flex-col w-full max-w-xl items-center justify-center md:justify-start md:items-start pt-16 md:pt-0 gap-y-4"
+        >
+          <h4 class="text-sm md:text-lg text-green-500 uppercase font-medium">
+            WHY CHOOSE US
+          </h4>
+          <h3 class="text-center md:text-left font-bold text-3xl md:text-4xl">
+            Find Favorites and Discover New Ones
+          </h3>
+          <p
+            class="text-sm md:text-lg text-neutral-400 text-center md:text-left"
+          >
+            At vero eos et accusamus et iusto odio dignissimos ducimus
+            blanditiis praesen voluptatum deleniti.
+          </p>
+          <a href="/" class="btn__primary mt-4 md:mt-8">Explore Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- #Section - Home Delivery -->
+    <section
+      aria-label="Home Delivery Service"
+      id="home-delivery"
+      class="bg-gray-50 overflow-hidden"
+      data-aos="fade-up"
+    >
+      <div
+        class="container max-w-5xl flex flex-col-reverse md:flex-row items-center justify-between px-3 md:px-0 py-10 md:py-[6.25rem] gap-y-20 md:gap-x-16"
+      >
+        <!-- ##Left Column -->
+        <div
+          class="flex flex-1 flex-col w-full max-w-xl items-center justify-center md:justify-start md:items-start md:pt-0 gap-y-4"
+          data-aos="fade-right"
+        >
+          <h4 class="text-sm md:text-lg text-yellow-500 uppercase font-medium">
+            HOME DELIVERY
+          </h4>
+          <h3
+            class="text-center md:text-left font-bold text-3xl md:text-4xl md:leading-snug"
+          >
+            Sit at Home We Will Take Care Your Order
+          </h3>
+          <p
+            class="text-sm md:text-lg text-neutral-400 text-center md:text-left"
+          >
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+          </p>
+          <a href="/" class="btn__secondary mt-4 md:mt-8">Explore Now</a>
+        </div>
+
+        <!-- ##Left Column -->
+        <div
+          class="flex flex-1 flex-col relative"
+          data-aos="fade-left"
+          data-aos-delay="500"
+        >
+          <img
+            src="./assets/images/chef-2.png"
+            alt="Chef"
+            class="w-full max-w-[26.0625rem] -mt-10"
+          />
+
+          <img
+            src="./assets/images/yellow-elipse-shape.svg"
+            alt="Decorative Shape Element"
+            class="w-12 h-12 absolute bottom-1 left-3"
+            data-aos="flip-up"
+            data-aos-delay="700"
+          />
+
+          <div
+            class="flex flex-col items-center bg-white rounded-xl p-5 shadow-sm2 max-w-[11.0625rem] z-10 absolute top-1/3 right-0 md:top-1/4 md:-translate-y-1/4 gap-y-3"
+            data-aos="fade-down"
+            data-aos-delay="900"
+          >
+            <div class="py-2 px-7 rounded-lg bg-red-50">
+              <img
+                src="./assets/images/delivery-bike.svg"
+                alt="Delivery Man on a Bike"
+                class="max-w-[3.75rem]"
+              />
+            </div>
+            <h4 class="font-bold">Bike Delivery</h4>
+            <p class="text-center text-neutral-400 text-xs">
+              Bike service ensures that your packages arrive quickly on time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #Section - Moble App Download Links -->
+    <section id="mobile-app" class="bg-red-50">
+      <div
+        class="container max-w-6xl flex flex-col md:flex-row items-center justify-between py-10 md:py-[6.25rem] px-3 md:px-5 gap-y-10 md:gap-x-16 overflow-hidden"
+      >
+        <!-- ##Left Column -->
+        <div class="flex flex-1 items-center justify-center">
+          <img
+            src="./assets/images/mobile-app-screen.svg"
+            alt="Grover app landing page snapshot"
+            class="max-w-[18.125rem] shadow-sm2"
+            data-aos="flip-right"
+          />
+        </div>
+
+        <!-- ##Right Column -->
+        <div
+          class="flex flex-1 flex-col w-full max-w-xl items-center justify-center md:justify-start md:items-start md:pt-0 gap-y-4"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <h4 class="text-sm md:text-lg text-red-500 uppercase font-medium">
+            Download our app
+          </h4>
+          <h3
+            class="text-center md:text-left font-bold text-3xl md:text-4xl md:leading-snug"
+          >
+            Get the Groceries app order more easily.
+          </h3>
+          <p
+            class="text-sm md:text-lg text-neutral-400 text-center md:text-left"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut.
+          </p>
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-y-4 md:gap-x-8 mt-6 md:mt-10"
+          >
+            <a
+              href="#"
+              class="flex gap-x-5 border border-neutral-300 rounded-lg items-center justify-between py-3 px-5 capitalize font-medium text-xl hover:bg-red-100 transition duration-200"
+              ><img
+                src="./assets/images/app-store-icon.svg"
+                alt="App store icon"
+                class="w-10 h-10"
+              />App Store</a
+            >
+            <a
+              href="#"
+              class="flex gap-x-5 border border-neutral-300 rounded-lg items-center justify-between py-3 px-5 capitalize font-medium text-xl hover:bg-red-100 transition duration-200"
+              ><img
+                src="./assets/images/play-store-icon.svg"
+                alt="Play store icon"
+                class="w-10 h-10"
+              />Play Store</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #Footer -->
+    <footer class="overflow-hidden">
+      <div
+        class="container flex flex-col my-10 md:my-[6rem] px-5 md:px-5 gap-y-5"
+      >
+        <!-- ##Main Footer -->
+        <div
+          id="main-footer"
+          class="flex flex-col md:flex-row items-start justify-between pb-5 md:pb-16 gap-y-5 md:gap-x-4"
+          data-aos="fade-up"
+        >
+          <!-- ###Footer Col - 1 -->
+          <div
+            class="flex flex-col w-full md:w-2/5 gap-y-3"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
+            <img
+              src="./assets/images/logo.svg"
+              alt="Footer Logo"
+              class="max-w-[10rem]"
+            />
+
+            <p class="text-neutral-400 w-3/4">
+              Fast delivery, which is active all over the world, serves with
+              many transportation vehicles.
+            </p>
+          </div>
+
+          <!-- ###Footer Col - 2 -->
+          <div
+            class="flex flex-col gap-y-5 w-full md:w-1/5"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <h6 class="font-semibold text-lg">Company</h6>
+            <ul class="flex flex-col gap-y-4 text-neutral-500 pl-3 md:pl-0">
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >Locations Map</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- ###Footer Col - 3 -->
+          <div
+            class="flex flex-col gap-y-5 w-full md:w-1/5"
+            data-aos="fade-up"
+            data-aos-delay="900"
+          >
+            <h6 class="font-semibold text-lg">Services</h6>
+            <ul class="flex flex-col gap-y-4 text-neutral-500 pl-3 md:pl-0">
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >Order tracking</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >Wish List</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >My account</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  class="hover:text-black transition-colors duration-200"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- ###Footer Col - 4 -->
+          <div
+            class="flex flex-col gap-y-5 w-full md:w-1/5"
+            data-aos="fade-left"
+            data-aos-delay="1200"
+          >
+            <h6 class="font-semibold text-lg">Get in Touch</h6>
+            <p class="text-neutral-500">
+              Subscribe to our weekly Newsletter and receive updates via email.
+            </p>
+
+            <form class="flex flex-col gap-y-3 items-start">
+              <input
+                type="text"
+                placeholder="ex. john@email.com"
+                class="border-neutral-300 border-b"
+              />
+              <input
+                type="button"
+                value="Subscribe"
+                class="border-b py-1 border-neutral-300 focus:ring-primary focus:border-primary hover:text-primary transition duration-200 hover:border-primary cursor-pointer"
+              />
+            </form>
+          </div>
+        </div>
+
+        <!-- ##Sub Footer -->
+        <div
+          id="sub-footer"
+          class="border-t border-neutral-300 pt-7 flex flex-col md:flex-row items-end justify-center w-full gap-y-4"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <p class="text-center md:text-left leading-relaxed text-neutral-400">
+            Development Rights Reserved @ADNAN 2024 | Design Rights Reserved
+            @BESNIK 2021
+          </p>
+
+          <div
+            class="w-full flex items-end justify-between md:justify-end gap-x-4"
+          >
+            <a
+              href="/"
+              class="text-sm font-medium text-neutral-600 hover:underline"
+              >Terms & Conditions</a
+            >
+            <a
+              href="/"
+              class="text-sm font-medium text-neutral-600 hover:underline"
+              >Privacy & Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scripts/libraries -->
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
